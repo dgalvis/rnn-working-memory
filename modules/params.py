@@ -4,7 +4,7 @@ from typing import Optional
 
 # Parameters for the dataset that is created
 def get_parameters(
-    params: Optional[dict] = None,
+    config: Optional[dict] = None,
     wheel_len: int = 31,
     seq_len: int = 15,
     max_set_size: int = 2,
@@ -16,8 +16,8 @@ def get_parameters(
     shift_level: int = 0,
 ) -> dict:
     
-    if params is None:
-        params = {}
+    if config is None:
+        config = {}
 
     min_colours = min_colours if min_colours is not None else 2
     max_colours = max_colours if max_colours is not None else max_set_size
@@ -30,7 +30,7 @@ def get_parameters(
         raise ValueError(f"max_colours must be between min_colours ({min_colours}) and max_set_size ({max_set_size}), got {max_colours}.")
 
     
-    params.update({
+    config.update({
         "wheel_len": wheel_len,
         "seq_len": seq_len,
         "max_set_size": max_set_size,
@@ -43,12 +43,12 @@ def get_parameters(
         "input_size": max_set_size * wheel_len + max_set_size,
     })
 
-    return params
+    return config
 
 
 # Parameters for the neural network
 def get_hyperparameters(
-    params: Optional[dict] = None,
+    config: Optional[dict] = None,
     hidden_size: int = 256,
     learning_rate: float = 0.001,
     num_layers: int = 1,
@@ -59,10 +59,10 @@ def get_hyperparameters(
     count_max: int = 5,
 ) -> dict:
     
-    if params is None:
-        params = {}
+    if config is None:
+        config = {}
 
-    params.update({
+    config.update({
         "hidden_size": hidden_size,
         "learning_rate": learning_rate,
         "num_layers": num_layers,
@@ -74,7 +74,7 @@ def get_hyperparameters(
         "device": torch.device('cuda' if torch.cuda.is_available() else 'cpu'),
     })
 
-    return params
+    return config
 
 
 if __name__ == '__main__':
