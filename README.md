@@ -29,8 +29,9 @@ To see the synthetic data, use the Jupyter Notebook plot_dataset.ipynb.
 Parameters for the synthetic dataset and for the recurrent neural network implementation 
 
 ```python
-params = params.get_parameters(**kwargsP)
-params = params.get_hyperparameters(params, **kwargsH)
+from modules import params
+config = params.get_parameters(**kwargsP)
+config = params.get_hyperparameters(config, **kwargsH)
 ```
 
 You can customise the behaviour by passing keyword arguments with the following options:
