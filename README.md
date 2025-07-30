@@ -18,11 +18,19 @@ To ensure reproducibility, we provide OS-specific Conda environment files. <os_n
 conda env create -f requirements_<os_name>.yml
 conda activate rnn_env
 ```
+## To Do
+
+> Add complex use cases back in (examples with noise)
+> Add analysis and results back in (showing orthogonality prior to retrocue)
+> Fix docstrings 
 
 ## Synthetic Dataset
 
 To see the synthetic data, use the Jupyter Notebook plot_dataset.ipynb.
 
+## Run Training and Testing
+
+For a use case, use the Jupyter Notebook run_rnn.ipynb.
 
 ## Parameters and Hyperparameters
 
