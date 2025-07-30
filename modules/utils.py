@@ -20,9 +20,9 @@ def train_model(config, model=None, file=None, verbose=False, loss_old = 1e10):
     if model == None:
         model = RNN(config).to(config["device"])
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=config["learning_rate"]) 
+    # optimizer = torch.optim.Adam(model.parameters(), lr=config["learning_rate"]) 
     # optimizer = torch.optim.AdamW(model.parameters(), lr=config["learning_rate"]) 
-    # optimizer = torch.optim.SGD(model.parameters(), lr=config["learning_rate"])
+    optimizer = torch.optim.SGD(model.parameters(), lr=config["learning_rate"])
     
     loss_mean = 0
     count = 0
@@ -50,7 +50,7 @@ def train_model(config, model=None, file=None, verbose=False, loss_old = 1e10):
                 if verbose == True:
                     _, acc = criterion_pi(outputs.view(L_it.shape), L_it, use_mean = True) 
                     print (f'Epoch [{(i+1)}/{config["num_batches"]}],  Accuracy: {acc:.4f}, Loss: {loss_mean*config["check_num"]:.4f}')    
-        if ((i+1) % config['check_num'] == 0):
+        if ((i+1) % config['check_num'] == 0) or ((i+1) == config['num_batches']):
             with torch.no_grad():
                 if verbose == True:
                     _, acc = criterion_pi(outputs.view(L_it.shape), L_it, use_mean = True)  
