@@ -62,4 +62,5 @@ You can customise the behaviour by passing keyword arguments with the following 
 | `noise_level` | float | `0.` | Amount of noise added when training |
 | `num_batches` | int | `2000` | Total batches for training |
 | `num_test_batches` | int | `500` | Total batches for testing |
-| `batch_size` | int64 |  `2000` | The number of training examples in on batch |
+| `batch_size` | int |  `2000` | The number of training examples in on batch |
+| `check_num` | int | `100` | Print accuracy and loss after this many batches |
