@@ -20,9 +20,9 @@ conda activate rnn_env
 ```
 ## To Do
 
-> Add complex use cases back in (examples with noise)
-> Add analysis and results back in (showing orthogonality prior to retrocue)
-> Fix docstrings 
+> Add complex use cases back in (examples with noise)   
+> Add analysis and results back in (showing orthogonality prior to retrocue)  
+> Fix docstrings   
 
 ## Synthetic Dataset
 
