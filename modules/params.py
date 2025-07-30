@@ -56,6 +56,8 @@ def get_hyperparameters(
     num_batches: int = 2000,
     num_test_batches: int = 500,
     batch_size: int = 2000,
+    check_num: int = 100,
+    
 ) -> dict:
     
     if config is None:
@@ -69,6 +71,7 @@ def get_hyperparameters(
         "num_batches": num_batches,
         "num_test_batches": num_test_batches,
         "batch_size": batch_size,
+        "check_num": check_num,
         "device": torch.device('cuda' if torch.cuda.is_available() else 'cpu'),
     })
 
