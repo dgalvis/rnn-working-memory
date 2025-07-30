@@ -14,7 +14,10 @@ Whereas the original paper focused on tasks with **2 stimuli**, this repository 
 
 To ensure reproducibility, we provide OS-specific Conda environment files. <os_name> is linux or mac.
 
-<pre lang="markdown"> <code>```bash conda env create -f requirements_&lt;os_name&gt;.yml conda activate rnn_env ```</code> </pre>
+```bash 
+conda env create -f requirements_&lt;os_name&gt;.yml
+conda activate rnn_env
+```
 
 ## Plot synthetic dataset
 
