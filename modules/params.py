@@ -13,7 +13,7 @@ def get_parameters(
     cue_time: int = 1,
     retro_cue_time: int = 8,
     kappa: float = 5,
-    shift_level: int = 0,
+    shift_level: float = 0,
 ) -> dict:
     
     if config is None:
@@ -53,10 +53,9 @@ def get_hyperparameters(
     learning_rate: float = 0.001,
     num_layers: int = 1,
     noise_level: float = 0.0,
-    num_batches: Optional[int] = 2000,
+    num_batches: int = 2000,
     num_test_batches: int = 500,
     batch_size: int = 2000,
-    count_max: int = 5,
 ) -> dict:
     
     if config is None:
@@ -70,7 +69,6 @@ def get_hyperparameters(
         "num_batches": num_batches,
         "num_test_batches": num_test_batches,
         "batch_size": batch_size,
-        "count_max": count_max,
         "device": torch.device('cuda' if torch.cuda.is_available() else 'cpu'),
     })
 
