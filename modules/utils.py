@@ -20,9 +20,9 @@ def train_model(config, model=None, file=None, verbose=False, loss_old = 1e10):
     if model == None:
         model = RNN(config).to(config["device"])
 
-    # optimizer = torch.optim.Adam(model.parameters(), lr=config["learning_rate"]) 
+    optimizer = torch.optim.Adam(model.parameters(), lr=config["learning_rate"]) 
     # optimizer = torch.optim.AdamW(model.parameters(), lr=config["learning_rate"]) 
-    optimizer = torch.optim.SGD(model.parameters(), lr=config["learning_rate"])
+    # optimizer = torch.optim.SGD(model.parameters(), lr=config["learning_rate"])
     
     loss_mean = 0
     count = 0
