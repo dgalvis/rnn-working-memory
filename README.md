@@ -19,6 +19,29 @@ conda env create -f requirements_<os_name>.yml
 conda activate rnn_env
 ```
 
-## Plot synthetic dataset
+## Synthetic Dataset
 
 To see the synthetic data, use the Jupyter Notebook plot_dataset.ipynb.
+
+
+## Parameters and Hyperparameters
+
+Parameters for the synthetic dataset and for the recurrent neural network implementation 
+
+```python
+params = params.get_parameters(**kwargsP)
+params = params.get_hyperparameters(params, **kwargsH)
+```
+
+You can customise the behaviour by passing keyword arguments with the following options:
+
+
+#### `kwargsP` Parameter options
+|Key|Type|Default|Description|
+|----------------|------|---------|------------------------------------| 
+|`max_set_size`| int64 |  `2` | The number of spaces to hold stimuli (N)|
+
+#### `kwargsH` Hyperparameter options
+|Key|Type|Default|Description|
+|----------------|------|---------|------------------------------------| 
+|`batch_size`| int64 |  `2000` | The number of training examples in on batch |
